@@ -9,7 +9,7 @@ tr {
 tr {
     transition: all 300ms;
     &:hover {
-        color: rgb(190, 190, 190);
+        color: red;
     }
     td {
         text-transform: uppercase;
@@ -40,6 +40,9 @@ tr {
     margin: 1px;
     color: black;
     font-weight: bold;
+    span {
+        cursor: pointer;
+    }
     .item {
         height: 100px;
         background-color: #d63031;

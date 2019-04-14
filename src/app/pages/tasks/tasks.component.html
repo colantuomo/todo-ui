@@ -25,8 +25,8 @@
         <th scope="col">Handle</th>
       </tr> -->
     </thead>
-    <tbody *ngIf="rows | async; else loading">
-      <tr *ngFor="let row of rows | async" [ngClass]="{'task-completed': !row.active}" (click)="update(row)">
+    <tbody>
+      <tr *ngFor="let row of rows" [ngClass]="{'task-completed': !row.active}" (click)="update(row)">
         <td> {{row.description}}</td>
         <td> {{row.user}}</td>
         <td> {{row.date | date}}</td>

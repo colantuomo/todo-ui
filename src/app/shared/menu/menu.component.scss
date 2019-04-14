@@ -13,9 +13,12 @@
   .sidenav a {
     padding: 6px 8px 6px 16px;
     text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
     font-size: 25px;
     color: #818181;
     display: block;
+    transition: all 300ms;
   }
   
   .sidenav a:hover {

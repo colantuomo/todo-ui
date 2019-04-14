@@ -36,7 +36,7 @@ export class TasksComponent implements OnInit, AfterViewInit {
   add(value) {
     const task = {
       description: value,
-      date: new Date().toString(),
+      date: new Date(),
       user: this.user,
       active: true
     }
@@ -61,7 +61,9 @@ export class TasksComponent implements OnInit, AfterViewInit {
   }
 
   tasks() {
-    this.rows = this.tasksService.tasks();
+    this.tasksService.tasks().subscribe(tasks => {
+      this.rows = tasks;
+    });
   }
 
   getDashboard() {
