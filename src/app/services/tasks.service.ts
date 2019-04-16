@@ -34,4 +34,9 @@ export class TasksService {
     const url = `${environment.api}/tasks/dashboard`
     return this.httpClient.get(url);
   }
+
+  tasksWithParam(param) {
+    const url = `${environment.api}/tasks/${param}`;
+    return this.httpClient.get(url);
+  }
 }

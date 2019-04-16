@@ -9,10 +9,11 @@ import { TasksService } from 'src/app/services/tasks.service';
 })
 export class TasksComponent implements OnInit, AfterViewInit {
 
+  isLoading: boolean;
   user: string;
   newTask: string;
-  rows: Observable<any>;
-  dashboard: any = { todo: 0, done: 0 };
+  rows;
+  dashboard: any = { todo: 0, done: 0, all: 0 };
   @ViewChild('modal') modal: ElementRef;
 
   constructor(private tasksService: TasksService) { }
@@ -61,14 +62,20 @@ export class TasksComponent implements OnInit, AfterViewInit {
   }
 
   tasks() {
+    this.isLoading = true;
     this.tasksService.tasks().subscribe(tasks => {
       this.rows = tasks;
+      this.isLoading = false;
     });
   }
 
   getDashboard() {
+    this.isLoading = true;
     this.tasksService.dashboard()
-      .subscribe(data => this.dashboard = data);
+      .subscribe(data => {
+        this.dashboard = data
+        this.isLoading = false;
+      });
   }
 
   setUser(user) {
@@ -76,6 +83,15 @@ export class TasksComponent implements OnInit, AfterViewInit {
     this.user = user;
     this.tasks();
     this.getDashboard();
+  }
+
+  tasksWithParam(param) {
+    this.isLoading = true;
+    this.tasksService.tasksWithParam(param).subscribe(res => {
+      this.rows = res;
+      this.isLoading = false;
+    })
+
   }
 
 }
