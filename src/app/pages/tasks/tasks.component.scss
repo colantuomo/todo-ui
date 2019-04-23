@@ -3,7 +3,7 @@ table {
 }
 
 .table-scroll {
-    height: 550px;
+    height: 350px;
     overflow: auto;
 }
 
@@ -39,24 +39,11 @@ tr {
     }
 }
 
-.delete-item {
-    width: 15%;
-    i {
-        font-size: 20px;
-        transition: all 300ms;
-        &:hover {
-            transform: rotate(90deg);
-        }  
-    }
-}
-
 .dashboard {
     margin: 1px;
     color: black;
     font-weight: bold;
-    span {
-        cursor: pointer;
-    }
+    cursor: pointer;
     .item {
         height: 100px;
         background-color: #d63031;
@@ -91,5 +78,33 @@ tr {
         }
     }
 }
-  
+
+.card {
+    font-size: 20px;
+    transition: all 300ms;
+    cursor: pointer;
+    &-disabled {
+        text-decoration: line-through;
+        color: rgb(190, 190, 190);
+        background-color: lightgray;
+    }
+    &-title {
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+    i {
+        margin-left: 90%;
+    }
+    .delete-item {
+        i {
+            transition: all 300ms;
+            &:hover {
+                transform: rotate(90deg);
+            }  
+        }
+    }
+    &:hover {
+        background-color: #00cec9;
+    }
+}
   

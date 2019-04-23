@@ -1,13 +1,13 @@
 <section class="m-2">
   <div class="row dashboard mb-3">
-    <div class="item-3 col-12 col-md-4 text-center">
-      <div>ALL </div><span class="badge badge-dark" (click)="tasks()">{{dashboard.all}}</span>
+    <div class="item-3 col-12 col-md-4 text-center" (click)="tasks()">
+      <div>ALL </div><span class="badge badge-dark">{{dashboard.all}}</span>
     </div>
-    <div class="item col-12 col-md-4 text-center">
-      <div>TO DO </div><span class="badge badge-dark" (click)="tasksWithParam(true)">{{dashboard.todo}}</span>
+    <div class="item col-12 col-md-4 text-center" (click)="tasksWithParam(true)">
+      <div>TO DO </div><span class="badge badge-dark">{{dashboard.todo}}</span>
     </div>
-    <div class="item-2 col-12 col-md-4 text-center">
-      <div>DONE </div><span class="badge badge-dark" (click)="tasksWithParam(false)">{{dashboard.done}}</span>
+    <div class="item-2 col-12 col-md-4 text-center" (click)="tasksWithParam(false)">
+      <div>DONE </div><span class="badge badge-dark">{{dashboard.done}}</span>
     </div>
   </div>
   <div class="input-group mb-2 mr-sm-2">
@@ -22,15 +22,10 @@
   <div class="table-scroll">
     <table class="table table-striped">
       <thead>
-        <!-- <tr>
-          <th scope="col">#</th>
-          <th scope="col">First</th>
-          <th scope="col">Last</th>
-          <th scope="col">Handle</th>
-        </tr> -->
       </thead>
       <tbody>
-        <tr [class.loading-screen]="isLoading" *ngFor="let row of rows" [ngClass]="{'task-completed': !row.active}" (click)="update(row)">
+        <tr [class.loading-screen]="isLoading" *ngFor="let row of rows" [ngClass]="{'task-completed': !row.active}"
+          (click)="update(row)">
           <td> {{row.description}}</td>
           <td> {{row.user}}</td>
           <td> {{row.date | date}}</td>
@@ -41,6 +36,24 @@
       </tbody>
     </table>
   </div>
+
+  <div>
+    <div class="row">
+      <div [@divState]="state" class="card m-2" style="width: 18rem;" *ngFor="let row of rows"
+        [ngClass]="{'card-disabled': !row.active}">
+        <div class="card-body" (click)="update(row)">
+          <!-- <h5 class="card-title">{{row.user}}</h5> -->
+          <span class="card-title badge badge-secondary">{{row.user}}</span>
+          <h6 class="card-subtitle mb-2 text-muted">{{row.date | date}}</h6>
+          <p class="card-text">{{row.description}}</p>
+        </div>
+        <div class="delete-item m-3" (click)="delete(row)">
+          <i class="fas fa-times text-danger"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </section>
 
 <!-- Button trigger modal -->
