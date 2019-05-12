@@ -19,7 +19,7 @@
     <input #task (keyup.enter)="add(task.value)" type="text" class="form-control"
       placeholder="Insira uma nova tarefa aqui..." [(ngModel)]="newTask">
   </div>
-  <div class="table-scroll">
+  <!-- <div class="table-scroll">
     <table class="table table-striped">
       <thead>
       </thead>
@@ -35,19 +35,17 @@
         </tr>
       </tbody>
     </table>
-  </div>
+  </div> -->
 
   <div>
     <div class="row">
-      <div [@divState]="state" class="card m-2" style="width: 18rem;" *ngFor="let row of rows"
-        [ngClass]="{'card-disabled': !row.active}">
+      <div [@divState]="state" class="card m-2" *ngFor="let row of rows" [ngClass]="{'card-disabled': !row.active}">
         <div class="card-body" (click)="update(row)">
-          <!-- <h5 class="card-title">{{row.user}}</h5> -->
           <span class="card-title badge badge-secondary">{{row.user}}</span>
           <h6 class="card-subtitle mb-2 text-muted">{{row.date | date}}</h6>
           <p class="card-text">{{row.description}}</p>
         </div>
-        <div class="delete-item m-3" (click)="delete(row)">
+        <div class="delete-item" (click)="delete(row)">
           <i class="fas fa-times text-danger"></i>
         </div>
       </div>

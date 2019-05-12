@@ -46,7 +46,7 @@ tr {
     cursor: pointer;
     .item {
         height: 100px;
-        background-color: #d63031;
+        // background-color: #d63031;
         transition: all 300ms;
         &:hover {
             background-color: #eb5858;
@@ -57,7 +57,7 @@ tr {
     }
     .item-2 {
         height: 100px;
-        background-color: #00cec9;
+        // background-color: #00cec9;
         transition: all 300ms;
         &:hover {
             background-color: #02aaa7;
@@ -68,7 +68,7 @@ tr {
     }
     .item-3 {
         height: 100px;
-        background-color: #0984e3;
+        // background-color: #0984e3;
         transition: all 300ms;
         &:hover {
             background-color: #076fbe;
@@ -80,6 +80,7 @@ tr {
 }
 
 .card {
+    width: 14rem;
     font-size: 20px;
     transition: all 300ms;
     cursor: pointer;
@@ -104,7 +105,8 @@ tr {
         }
     }
     &:hover {
-        background-color: #00cec9;
+        border-color: #00cec9;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     }
 }
   
