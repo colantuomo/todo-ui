@@ -18,6 +18,6 @@ const ROUTES: Routes = [
     CommonModule,
     FormsModule,
     RouterModule.forChild(ROUTES)
-  ]
+  ],
 })
 export class TasksModule { }

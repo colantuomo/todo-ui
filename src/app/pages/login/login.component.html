@@ -1,35 +1,47 @@
-<body>
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-        <div class="card card-signin my-5">
-          <div class="card-body">
-            <h5 class="card-title text-center">LogIn</h5>
-            <form class="form-signin">
-              <div class="form-label-group">
-                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-                <!-- <label for="inputEmail">Email address</label> -->
-              </div>
-
-              <div class="form-label-group">
-                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-                <!-- <label for="inputPassword">Password</label> -->
-              </div>
-
-              <div class="custom-control custom-checkbox mb-3">
-                <input type="checkbox" class="custom-control-input" id="customCheck1">
-                <label class="custom-control-label" for="customCheck1">Remember password</label>
-              </div>
-              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
-              <hr class="my-4">
-              <!-- <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i
-                  class="fab fa-google mr-2"></i> Sign in with Google</button>
-              <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i
-                  class="fab fa-facebook-f mr-2"></i> Sign in with Facebook</button> -->
+<section class="login">
+    <div class="card-login">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#login" role="tab" aria-controls="home"
+                    aria-selected="true">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#register" role="tab"
+                    aria-controls="profile" aria-selected="false">Registrar</a>
+            </li>
+        </ul>
+        <!-- <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
+            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
+            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+        </div> -->
+        <div class="tab-content" id="myTabContent">
+            <form ngForm="formLogin" id="login" class="tab-pane fade show active">
+                <div class="form-group">
+                    <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Email"
+                        [(ngModel)]="loginForm.email" name="email" #email>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" placeholder="Senha" [(ngModel)]="loginForm.password"
+                        name="password" #password>
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg btn-block" (click)="login()">Login</button>
             </form>
-          </div>
+            <form ngForm="form" id="register" class="tab-pane fade">
+                <div class="form-group">
+                    <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Email"
+                        [(ngModel)]="registerForm.email" name="registerEmail" #registerEmail>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Login"
+                        [(ngModel)]="registerForm.login" name="registerLogin" #registerLogin>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" placeholder="Senha" [(ngModel)]="registerForm.password"
+                        name="registerPassword" #registerPassword>
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg btn-block" (click)="register()">Registrar</button>
+            </form>
         </div>
-      </div>
     </div>
-  </div>
-</body>
+</section>
