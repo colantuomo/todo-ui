@@ -1,0 +1,15 @@
+.header-line {
+    padding-top: 5px;
+    display: flex;
+    justify-content: space-between;
+    .title {
+        font-weight: bold;
+        width: 100%;
+    }
+    .actions {
+        width: 40%;
+        display: flex;
+        justify-content: space-around;
+        padding-top: 10px;
+    }
+}

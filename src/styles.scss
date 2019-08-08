@@ -1,7 +1,7 @@
-/* You can add global styles to this file, and also import other style files */
-// @import url('https://fonts.googleapis.com/css?family=Roboto');
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import "./app/styles/variables";
+@import "./app/styles/theming";
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+
 * {
-    // font-family: 'Roboto', sans-serif;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Quicksand', sans-serif;
 }
