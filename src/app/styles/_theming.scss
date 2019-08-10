@@ -5,7 +5,6 @@
     height: 35px;
     width: 45%;
     font-weight: bold;
-    outline: none;
     &-success {
         background-color: #5FBE5E;
         color: white;
@@ -14,6 +13,10 @@
         background-color: white;
         border: 2px solid #FF7979;
         color: #FF7979;
+    }
+    &-outline {
+        border: 2px solid $secondary-color;
+        background-color: rgba(10, 23, 55, 0);
     }
     &:active {
         box-shadow: inset 0px 0px 5px rgba(0,0,0,0.5);  

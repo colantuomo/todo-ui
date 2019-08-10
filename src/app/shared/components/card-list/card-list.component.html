@@ -1,16 +1,11 @@
 <section class="card-list">
-  <div class="date-title">
-    12 Jan 2019
-  </div>
-  <div class="cards">
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
+  <div *ngFor="let item of items">
+    <div class="date-title">
+      <span class="date-title--month">{{item.month}}</span>
+      <span class="date-title--year">{{item.year}}</span>
+    </div>
+    <div class="cards">
+      <app-card *ngFor="let card of item.cards" [content]="card"></app-card>
+    </div>
   </div>
 </section>

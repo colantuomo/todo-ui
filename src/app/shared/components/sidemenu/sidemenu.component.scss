@@ -12,9 +12,9 @@
     flex-direction: row;
     justify-content: space-around;
     &__input {
+        outline: none;
         width: 70%;
         text-decoration: none;
-        outline: none;
         border: none;
         border-bottom: 1px solid $primary-color;
         background-color: $secondary-color;

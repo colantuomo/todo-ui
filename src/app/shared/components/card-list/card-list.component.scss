@@ -1,3 +1,32 @@
+.card-list {
+    // width: auto;
+    height: 85vh;
+    // border: 13px solid #bed5cd;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    white-space: nowrap;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.date-title {
+    display: flex;
+    // background-color: aquamarine;
+    margin: 5px;
+    background: linear-gradient(to right, #b5eee9 0%, #2ae5c9 0%, #beefea 100%);
+    &--month {
+        padding-left: 5px;
+        width: 90%;
+    }
+    &--year {
+        text-align: center;
+        font-weight: bold;
+        width: 10%;
+    }
+}
+
 .cards {
     display: flex;
     flex-wrap: wrap;

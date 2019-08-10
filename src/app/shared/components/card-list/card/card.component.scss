@@ -1,7 +1,27 @@
 .card {
     height: 160px;
     width: 215px;
-    // background-color: lightgray;
     margin: 3px;
     border: 1px solid gray;
+    display: flex;
+    flex-direction: column;
+    font-size: 15px;
+    &__content {
+        padding: 5px;
+        max-height: 115px;
+        height: 115px;
+        white-space: pre-wrap;
+    }
+    &__bottom {
+        display: flex;
+        justify-content: space-around;
+        text-align: center;
+        button {
+            width: 45%;
+            outline: none;
+        }
+        img {
+            padding-bottom: 3px;
+        }
+    }
 }
