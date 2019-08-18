@@ -10,14 +10,15 @@
         <div class="pendency">
           <div class="pendency__item">
             <img src="../../../../assets/icons/thumb_up-icon.svg">
-            <span>{{item.pendencies.done}}</span>
+            <span class="pendency__item--total">{{item.pendencies.done}}</span>
           </div>
           <div class="pendency__item">
             <img class="invert-icon" src="../../../../assets/icons/thumb_up-icon.svg">
-            <span>{{item.pendencies.todo}}</span>
+            <span class="pendency__item--total">{{item.pendencies.todo}}</span>
           </div>
         </div>
       </div>
     </div>
+    <app-empty-box message="Please, register a category above" [item]="categories"></app-empty-box>
   </div>
 </section>

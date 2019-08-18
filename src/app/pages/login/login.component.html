@@ -1,47 +1,20 @@
 <section class="login">
-    <div class="card-login">
-        <ul class="nav nav-tabs" id="myTab" role="tablist">
-            <li class="nav-item">
-                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#login" role="tab" aria-controls="home"
-                    aria-selected="true">Login</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#register" role="tab"
-                    aria-controls="profile" aria-selected="false">Registrar</a>
-            </li>
-        </ul>
-        <!-- <div class="tab-content" id="myTabContent">
-            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
-            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
-            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
-        </div> -->
-        <div class="tab-content" id="myTabContent">
-            <form ngForm="formLogin" id="login" class="tab-pane fade show active">
-                <div class="form-group">
-                    <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Email"
-                        [(ngModel)]="loginForm.email" name="email" #email>
-                </div>
-                <div class="form-group">
-                    <input type="password" class="form-control" placeholder="Senha" [(ngModel)]="loginForm.password"
-                        name="password" #password>
-                </div>
-                <button type="submit" class="btn btn-primary btn-lg btn-block" (click)="login()">Login</button>
+    <div class="login__logo">
+        <h1 class="login__logo--title">Ta<span class="login__logo--title-letter">s</span>ks</h1>
+    </div>
+    <div class="login__box">
+        <div class="login__box--line"></div>
+    </div>
+    <div class="login__form">
+        <div class="login__form--box">
+            <form>
+                <input class="custom-input" type="text" placeholder="Login">
+                <input class="custom-input" type="password" placeholder="Password">
             </form>
-            <form ngForm="form" id="register" class="tab-pane fade">
-                <div class="form-group">
-                    <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Email"
-                        [(ngModel)]="registerForm.email" name="registerEmail" #registerEmail>
-                </div>
-                <div class="form-group">
-                    <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Login"
-                        [(ngModel)]="registerForm.login" name="registerLogin" #registerLogin>
-                </div>
-                <div class="form-group">
-                    <input type="password" class="form-control" placeholder="Senha" [(ngModel)]="registerForm.password"
-                        name="registerPassword" #registerPassword>
-                </div>
-                <button type="submit" class="btn btn-primary btn-lg btn-block" (click)="register()">Registrar</button>
-            </form>
+            <div class="buttons">
+                <button class="custom-btn custom-btn-outline">Sign in</button>
+                <button class="custom-btn custom-btn-outline">Register</button>
+            </div>
         </div>
     </div>
 </section>

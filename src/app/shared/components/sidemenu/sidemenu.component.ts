@@ -12,6 +12,10 @@ export class SideMenuComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.fill();
+  }
+
+  fill() {
     this.categories = [
       { id: 1, title: 'work', pendencies: { todo: 5, done: 2 } },
       { id: 2, title: 'personal', pendencies: { todo: 10, done: 4 } },

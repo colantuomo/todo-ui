@@ -1,4 +1,4 @@
-@import "../../../styles/variables";
+@import "../../../../styles/variables";
 .categories {
     width: 30%;
     max-width: 30%;
@@ -32,7 +32,6 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    font-weight: bold;
     &__item {
         cursor: pointer;
         display: flex;
@@ -49,9 +48,10 @@
                 display: flex;
                 justify-content: space-between;
                 &__item {
+                    font-weight: bold;
                     width: 40%;
                     display: flex;
-                    span {
+                    &--total {
                         text-align: center;
                         width: 100%;
                     }

@@ -1,0 +1,45 @@
+@import "./variables";
+
+.custom-btn {
+    border: 0;
+    border-radius: 5px;
+    font-size: 20px;
+    height: 35px;
+    width: 45%;
+    font-weight: bold;
+    &-success {
+        background-color: #5FBE5E;
+        color: white;
+        &:hover {
+            background: rgb(132, 192, 131);
+        }
+    }
+    &-danger {
+        background-color: white;
+        border: 2px solid #FF7979;
+        color: #FF7979;
+        &:hover {
+            background: rgba(255, 121, 121, 0.041);
+        }
+    }
+    &-outline {
+        border: 2px solid $secondary-color;
+        background-color: rgba(10, 23, 55, 0);
+        &:hover {
+            background: rgba(110, 110, 110, 0.041);
+        }
+    }
+    &:active {
+        box-shadow: inset 1px 0px 10px rgba(0,0,0,0.5);  
+    }
+}
+
+.custom-input {
+    outline: none;
+    width: 100%;
+    text-decoration: none;
+    border: none;
+    border-bottom: 1px solid $primary-color;
+    // background-color: $secondary-color;
+    font-size: $placeholder-size;
+}

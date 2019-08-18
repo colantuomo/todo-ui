@@ -1,0 +1,18 @@
+@import ".../../../../../../styles/variables";
+
+.box {
+    height: 75px;
+    width: 415px;
+    border-radius: 10px;
+    margin: auto;
+    margin-top: 25%;
+    display: flex;
+    justify-content: space-around;
+    &--message {
+        padding-top: 10px;
+        color: $primary-color;
+        pointer-events: none;
+        user-select: none;
+        font-size: 20px;
+    }
+}

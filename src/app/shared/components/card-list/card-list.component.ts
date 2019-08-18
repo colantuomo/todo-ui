@@ -7,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardListComponent implements OnInit {
 
-  items = [];
+  items: Array<any>;
   constructor() { }
 
   ngOnInit() {
+    this.fillItems();
+  }
+
+  fillItems() {
     this.items = [
       {
         month: 'January', year: 2019, cards: [
