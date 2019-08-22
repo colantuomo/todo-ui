@@ -7,14 +7,15 @@
     </div>
     <div class="login__form">
         <div class="login__form--box">
-            <form>
-                <input class="custom-input" type="text" placeholder="Login">
-                <input class="custom-input" type="password" placeholder="Password">
+            <form [formGroup]="formLogin" (ngSubmit)="login()">
+                <input formControlName="email" class="custom-input" type="text" placeholder="Email">
+                <input formControlName="password" class="custom-input" type="password" placeholder="Password">
+                <div class="buttons">
+                    <button [disabled]="formLogin.invalid" type="submit" class="custom-btn custom-btn-outline">Sign
+                        in</button>
+                    <button class="custom-btn custom-btn-outline">Register</button>
+                </div>
             </form>
-            <div class="buttons">
-                <button class="custom-btn custom-btn-outline">Sign in</button>
-                <button class="custom-btn custom-btn-outline">Register</button>
-            </div>
         </div>
     </div>
 </section>

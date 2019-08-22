@@ -10,11 +10,11 @@ export class AuthService {
   private static URL = `${environment.api}/auth`
   constructor(private httpClient: HttpClient) { }
 
-  register(body: UserModel) {
+  register(body: any) {
     return this.httpClient.post(`${AuthService.URL}/register`, body);
   }
 
-  login(body: UserModel) {
+  login(body: UserLogin) {
     return this.httpClient.post(`${AuthService.URL}/login`, body);
   }
 
@@ -23,8 +23,7 @@ export class AuthService {
   }
 }
 
-export interface UserModel {
-  login?: string,
-  email: string,
-  password: string
+export interface UserLogin {
+  email: string;
+  password: string;
 }

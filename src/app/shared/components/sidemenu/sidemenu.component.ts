@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SideMenuComponent implements OnInit {
 
-  categories = [];
+  categories: any[];
 
   constructor() { }
 

@@ -4,10 +4,6 @@ import { LoginComponent } from './pages/login/login.component';
 import { AuthGuardService } from './services/auth-guard.service';
 
 const routes: Routes = [
-  // {
-  //   path: 'home',
-  //   loadChildren: './pages/home/home.module#HomeModule'
-  // },
   {
     path: 'tasks',
     loadChildren: './pages/tasks/tasks.module#TasksModule',
@@ -15,7 +11,7 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    component: LoginComponent
+    loadChildren: './pages/login/login.module#LoginModule',
   },
   {
     path: '**',
