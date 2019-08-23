@@ -1,20 +1,20 @@
 <section class="categories">
   <div class="category">
-    <input class="category__input" type="text" placeholder="Create a new category">
-    <img class="category__icon" src="../../../../assets/icons/add-icon.svg">
+    <input #category class="category__input" type="text" placeholder="Create a new category">
+    <img class="category__icon" src="../../../../assets/icons/add-icon.svg" (click)="add(category.value)">
   </div>
   <div class="list">
-    <div class="list__item" *ngFor="let item of categories">
-      <h3 class="list__item_title text-capitalize">{{item.title}}</h3>
+    <div class="list__item" *ngFor="let item of categories" (click)="selectCategory.emit(item)">
+      <h3 class="list__item_title text-capitalize">{{item.name}}</h3>
       <div class="list__item_notification">
         <div class="pendency">
           <div class="pendency__item">
             <img src="../../../../assets/icons/thumb_up-icon.svg">
-            <span class="pendency__item--total">{{item.pendencies.done}}</span>
+            <!-- <span class="pendency__item--total">{{item.pendencies.done}}</span> -->
           </div>
           <div class="pendency__item">
             <img class="invert-icon" src="../../../../assets/icons/thumb_up-icon.svg">
-            <span class="pendency__item--total">{{item.pendencies.todo}}</span>
+            <!-- <span class="pendency__item--total">{{item.pendencies.todo}}</span> -->
           </div>
         </div>
       </div>

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { CategoriesService } from 'src/app/services/categories.service';
 
 @Component({
   selector: 'app-sidemenu',
@@ -7,21 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SideMenuComponent implements OnInit {
 
+  @Output() selectCategory = new EventEmitter<any>();
   categories: any[];
 
-  constructor() { }
+  constructor(private categoriesService: CategoriesService) { }
 
   ngOnInit() {
     this.fill();
   }
 
   fill() {
-    this.categories = [
-      { id: 1, title: 'work', pendencies: { todo: 5, done: 2 } },
-      { id: 2, title: 'personal', pendencies: { todo: 10, done: 4 } },
-      { id: 3, title: 'family', pendencies: { todo: 7, done: 17 } },
-      { id: 4, title: 'study', pendencies: { todo: 12, done: 2 } },
-    ];
+    this.categoriesService.getCategories().subscribe(res => this.categories = res);
+  }
+
+  add(category: string) {
+    this.categoriesService.addCategory(category).subscribe(() => this.fill());
   }
 
 }
