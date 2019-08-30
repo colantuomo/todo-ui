@@ -1,5 +1,5 @@
-import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
-import { TasksService } from 'src/app/services/tasks.service';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tasks',
@@ -8,26 +8,14 @@ import { TasksService } from 'src/app/services/tasks.service';
 })
 export class TasksComponent implements OnInit {
 
-  tasks: any[];
-
-  constructor(private tasksService: TasksService) { }
+  items: any;
+  constructor(private router: Router) { }
 
   ngOnInit() {
-    this.get();
   }
 
-  delete(row) {
-    this.tasksService.delete(row)
-      .subscribe(() => this.get());
-  }
-
-  get() {
-    this.tasksService.tasks().subscribe(tasks => this.tasks = tasks);
-  }
-
-  selectCategory(item: any) {
-    console.log(item);
-
+  selectCategory(items: any) {
+    this.router.navigateByUrl(`tasks/${items._id}`);
   }
 
 }

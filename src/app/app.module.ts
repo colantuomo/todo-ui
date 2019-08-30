@@ -7,7 +7,6 @@ import { ToastrModule } from 'ngx-toastr';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MenuModule } from './shared/components/menu/menu.module';
-import { LoginComponent } from './pages/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { JwtInterceptor } from './auth/jwt.interceptor';
 import { LoginModule } from './pages/login/login.module';

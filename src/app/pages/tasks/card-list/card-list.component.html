@@ -1,5 +1,7 @@
+<app-task-header [title]="teste" (addNote)="addNote($event)"></app-task-header>
+<app-search-box></app-search-box>
 <section class="card-list">
-  <div *ngFor="let item of items">
+  <!-- <div *ngFor="let item of items">
     <div class="date-title">
       <span class="date-title--month">{{item.month}}</span>
       <span class="date-title--year">{{item.year}}</span>
@@ -7,6 +9,6 @@
     <div class="cards">
       <app-card *ngFor="let card of item.cards" [content]="card"></app-card>
     </div>
-  </div>
+  </div> -->
   <app-empty-box message="Oops! It's empty here." [item]="items"></app-empty-box>
 </section>

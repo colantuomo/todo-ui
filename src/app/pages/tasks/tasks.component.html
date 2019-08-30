@@ -1,8 +1,6 @@
 <section class="tasks">
   <app-sidemenu class="tasks__sidemenu" (selectCategory)="selectCategory($event)"></app-sidemenu>
   <div class="tasks__home">
-    <app-task-header></app-task-header>
-    <app-search-box></app-search-box>
-    <app-card-list [items]="tasks"></app-card-list>
+    <router-outlet></router-outlet>
   </div>
 </section>

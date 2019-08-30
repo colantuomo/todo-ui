@@ -1,0 +1,9 @@
+<section class="add-task">
+  <div class="d-flex flex-column">
+    <input class="custom-input" type="text" placeholder="What you need to do?" [(ngModel)]="title">
+    <div class="d-flex justify-content-between">
+      <button class="custom-btn custom-btn-success w-49 mt-3" (click)="add()" [disabled]="!title">That's it!</button>
+      <button class="custom-btn custom-btn-danger w-49 mt-3" (click)="dialogRef.close()">Nevermind</button>
+    </div>
+  </div>
+</section>

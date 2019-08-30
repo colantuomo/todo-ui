@@ -1,6 +1,7 @@
 @import "./styles/variables";
 @import "./styles/theming";
 @import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
 * {
     font-family: 'Quicksand', sans-serif;

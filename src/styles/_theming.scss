@@ -32,6 +32,9 @@
     &:active {
         box-shadow: inset 1px 0px 10px rgba(0,0,0,0.5);  
     }
+    &:disabled {
+        background-color: lightgray;
+    }
 }
 
 .custom-input {
