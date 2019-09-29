@@ -10,8 +10,11 @@ export class SideMenuComponent implements OnInit {
 
   @Output() selectCategory = new EventEmitter<any>();
   categories: any[];
+  activeIdxMenu: number;
 
-  constructor(private categoriesService: CategoriesService) { }
+  constructor(private categoriesService: CategoriesService) {
+    this.categoriesService.onCategories.subscribe(() => this.fill());
+  }
 
   ngOnInit() {
     this.fill();

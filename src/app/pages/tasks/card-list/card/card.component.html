@@ -1,10 +1,13 @@
 <div class="card">
-    <div class="card__content">{{content.title}}</div>
+    <div class="card__header">
+        <h3>{{content.createdAt | date}}</h3>
+    </div>
+    <div class="card__content">{{content.description}}</div>
     <div class="card__bottom">
         <button class="custom-btn custom-btn-outline">
             <img src="./assets/icons/outline-done-24px.svg">
         </button>
-        <button class="custom-btn custom-btn-outline">
+        <button class="custom-btn custom-btn-outline" (click)="delete(content)">
             <img src="./assets/icons/outline-clear-24px.svg">
         </button>
     </div>

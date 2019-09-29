@@ -9,6 +9,7 @@ export class TaskHeaderComponent implements OnInit {
 
   @Input() title: string;
   @Output() addNote: EventEmitter<any> = new EventEmitter();
+  @Output() deleteNote: EventEmitter<any> = new EventEmitter();
 
   constructor() { }
 

@@ -45,6 +45,7 @@
         &_notification {
             flex: 1;
             .pendency {
+                margin-top: 6px;
                 display: flex;
                 justify-content: space-between;
                 &__item {
@@ -64,6 +65,10 @@
         &:focus {
             background-color: #FFEA9E;
         }
+    }
+
+    .active {
+        background-color: #FFEA9E;
     }
 }
 
