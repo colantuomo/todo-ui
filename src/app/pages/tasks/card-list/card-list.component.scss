@@ -28,6 +28,12 @@
 }
 
 .cards {
+    @media screen and (max-width: 650px) {
+        app-card {
+            width: 100%;    
+        }
+        width: 100%;
+    }
     display: flex;
     flex-wrap: wrap;
     margin-top: 5px;

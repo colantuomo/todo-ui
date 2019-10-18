@@ -3,6 +3,9 @@
     display: flex;
     &__sidemenu {
         flex: 0.43;
+        @media screen and (max-width: 1000px) {
+            display: none;
+        }
     }
     &__home {
         flex: 1;
