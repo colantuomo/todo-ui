@@ -1,4 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
 import { CategoriesService } from 'src/app/services/categories.service';
 
 @Component({
@@ -8,24 +10,35 @@ import { CategoriesService } from 'src/app/services/categories.service';
 })
 export class SideMenuComponent implements OnInit {
 
-  @Output() selectCategory = new EventEmitter<any>();
-  categories: any[];
-  activeIdxMenu: number;
+  public categories: Observable<any[]>;
+  public activeId: number;
+  public category: string;
 
-  constructor(private categoriesService: CategoriesService) {
+  @Output() selectCategory = new EventEmitter<any>();
+
+  constructor(private categoriesService: CategoriesService, private activatedRoute: ActivatedRoute) {
     this.categoriesService.onCategories.subscribe(() => this.fill());
   }
 
   ngOnInit() {
+    this._handleRouteParams();
     this.fill();
   }
 
   fill() {
-    this.categoriesService.getCategories().subscribe(res => this.categories = res);
+    this.categories = this.categoriesService.getCategories();
   }
 
-  add(category: string) {
-    this.categoriesService.addCategory(category).subscribe(() => this.fill());
+  add() {
+    this.categoriesService.addCategory(this.category).subscribe(() => this.fill());
+    this.category = '';
+  }
+
+  private _handleRouteParams(): void {
+    this.activatedRoute.params.subscribe(params => {
+      this.activeId = params.id;
+      console.log('handle routes', this.activeId);
+    });
   }
 
 }

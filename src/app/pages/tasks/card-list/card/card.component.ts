@@ -1,6 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
-
-import { Task } from 'src/app/shared/models/task.interface';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-card',
@@ -10,14 +8,12 @@ import { Task } from 'src/app/shared/models/task.interface';
 export class CardComponent implements OnInit {
 
   @Input() content: any;
+  @Output() delete = new EventEmitter<any>();
+  @Output() done = new EventEmitter<any>();
 
   constructor() { }
 
   ngOnInit() {
-  }
-
-  public delete(content: Task) {
-
   }
 
 }

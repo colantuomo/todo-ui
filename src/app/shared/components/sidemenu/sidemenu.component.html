@@ -1,21 +1,11 @@
 <section class="categories">
   <div class="category">
-    <input #category class="category__input" type="text" placeholder="Create a new category">
-    <img class="category__icon" src="../../../../assets/icons/add-icon.svg" (click)="add(category.value)">
+    <input [(ngModel)]="category" class="category__input" type="text" placeholder="Create a new category">
+    <img class="category__icon" src="../../../../assets/icons/add-icon.svg" (click)="add()">
   </div>
   <div class="list">
-    <div class="list__item" [ngClass]="{'active': activeIdxMenu === idx}" *ngFor="let item of categories; let idx = index" (click)="selectCategory.emit(item); activeIdxMenu = idx">
+    <div class="list__item" [ngClass]="{'active': activeId === item.categoryId}" *ngFor="let item of categories | async" (click)="selectCategory.emit(item)">
       <h3 class="list__item_title text-capitalize">{{item.name}}</h3>
-      <div class="list__item_notification">
-        <!-- <div class="pendency">
-          <div class="pendency__item">
-            <img src="../../../../assets/icons/thumb_up-icon.svg">
-          </div>
-          <div class="pendency__item">
-            <img class="invert-icon" src="../../../../assets/icons/thumb_up-icon.svg">
-          </div>
-        </div> -->
-      </div>
     </div>
     <app-empty-box message="Please, register a category above" [item]="categories"></app-empty-box>
   </div>

@@ -1,8 +1,8 @@
-<app-task-header [title]="teste" (addNote)="addNote($event)" (deleteNote)="deleteNote($event)"></app-task-header>
+<app-task-header (addNote)="addNote($event)" (deleteNote)="deleteNote($event)"></app-task-header>
 <app-search-box></app-search-box>
 <section class="card-list">
   <div class="cards">
-    <app-card *ngFor="let item of items" [content]="item"></app-card>
+    <app-card *ngFor="let item of items" [content]="item" (delete)="deleteTask($event)"></app-card>
   </div>
   <app-empty-box message="Oops! It's empty here." [item]="items"></app-empty-box>
 </section>

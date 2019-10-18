@@ -24,7 +24,7 @@ export class CardListComponent implements OnInit {
     this.activatedRoute.params.subscribe(params => {
       const { id } = params;
       this.categoryId = id;
-      this.setNotes(id);
+      this._setNotes(id);
     });
   }
 
@@ -37,16 +37,18 @@ export class CardListComponent implements OnInit {
     ref.afterClosed().subscribe(task => this._handleNewNote(task));
   }
 
-  private setNotes(id: string): void {
-    this.taskService.tasks(id).subscribe((res: Task[]) => {
-      this.items = res;
-    });
+  public deleteTask(task: Task): void {
+    this.taskService.delete(task).subscribe(() => this._setNotes(this.categoryId));
+  }
+
+  private _setNotes(id: string): void {
+    this.taskService.tasks(id).subscribe((res: Task[]) => this.items = res);
   }
 
   private _handleNewNote(description: string): void {
     if (!description) { return; }
     this.taskService.add({ categoryId: this.categoryId, description })
-      .subscribe(() => this.setNotes(this.categoryId));
+      .subscribe(() => this._setNotes(this.categoryId));
   }
 
 }
