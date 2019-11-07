@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { CategoriesService } from 'src/app/services/categories.service';
 
@@ -14,30 +14,57 @@ export class SideMenuComponent implements OnInit {
   public activeId: number;
   public category: string;
 
-  @Output() selectCategory = new EventEmitter<any>();
+  @Output() selectCategory = new EventEmitter<void>();
 
-  constructor(private categoriesService: CategoriesService, private activatedRoute: ActivatedRoute) {
+  constructor(private categoriesService: CategoriesService, private activatedRoute: ActivatedRoute, private router: Router) {
     this.categoriesService.onCategories.subscribe(() => this.fill());
   }
 
   ngOnInit() {
-    this._handleRouteParams();
     this.fill();
+    this._handleRouteParams();
+    this._handleDeleteCategory();
   }
 
-  fill() {
+  fill(): void {
     this.categories = this.categoriesService.getCategories();
   }
 
-  add() {
+  add(): void {
+    if (!this.category) {
+      return;
+    }
     this.categoriesService.addCategory(this.category).subscribe(() => this.fill());
     this.category = '';
   }
 
+  navigateCategory(id: number): void {
+    this.selectCategory.emit();
+    this.activeId = id;
+    this.router.navigateByUrl(`tasks/${id}`);
+  }
+
   private _handleRouteParams(): void {
     this.activatedRoute.params.subscribe(params => {
-      this.activeId = params.id;
-      console.log('handle routes', this.activeId);
+      const { id } = params;
+      if (!id) {
+        this._setCategoryId();
+      } else {
+        this.activeId = params.id;
+      }
+    });
+  }
+
+  private _setCategoryId(): void {
+    this.categories.subscribe(list => {
+      const id = this.activeId = list.shift()._id;
+      this.navigateCategory(id);
+    });
+  }
+
+  private _handleDeleteCategory(): void {
+    this.categoriesService.onCategories.subscribe(() => {
+      this._setCategoryId();
     });
   }
 

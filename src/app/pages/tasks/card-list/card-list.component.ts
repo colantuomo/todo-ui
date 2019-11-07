@@ -32,6 +32,10 @@ export class CardListComponent implements OnInit {
     this.categoriesService.delete(this.categoryId).subscribe(() => this.categoriesService.onCategories.next());
   }
 
+  public onSearch(search: string): void {
+    this.taskService.search(search, this.categoryId).subscribe((res: Task[]) => this.items = res);
+  }
+
   public addNote(): void {
     const ref = this.dialog.open(AddTaskComponent);
     ref.afterClosed().subscribe(task => this._handleNewNote(task));

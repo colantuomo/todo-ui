@@ -13,7 +13,6 @@
 
 .date-title {
     display: flex;
-    // background-color: aquamarine;
     margin: 5px;
     background: linear-gradient(to right, #b5eee9 0%, #2ae5c9 0%, #beefea 100%);
     &--month {
@@ -32,6 +31,7 @@
         app-card {
             width: 100%;    
         }
+        margin-bottom: 30px;
         width: 100%;
     }
     display: flex;

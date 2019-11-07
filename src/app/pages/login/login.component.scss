@@ -1,7 +1,7 @@
 .login {
   display: flex;
   justify-content: space-between;
-  margin-top: 10%;
+  margin-top: 5%;
   height: 500px;
   @media screen and (max-width: 1000px) {
     flex-direction: column;
@@ -11,13 +11,11 @@
     text-align: center;
     &--title {
       font-size: 50px;
-      font-weight: bold;
-      padding-left: 50%;
       @media screen and (max-width: 1000px) {
         padding-left: 0;
       }
       &-letter {
-        color: aqua;
+        font-weight: bolder;
       }
     }
   }

@@ -1,5 +1,5 @@
 <app-task-header (addNote)="addNote($event)" (deleteNote)="deleteNote($event)"></app-task-header>
-<app-search-box></app-search-box>
+<app-search-box (search)="onSearch($event)"></app-search-box>
 <section class="card-list">
   <div class="cards">
     <app-card *ngFor="let item of items" [content]="item" (delete)="deleteTask($event)"></app-card>

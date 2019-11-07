@@ -1,2 +1,2 @@
-<input class="box-input" type="text" placeholder="Search for a note here..." autocomplete="off">
+<input class="box-input" (ngModelChange)="onChange()" [(ngModel)]="input" type="text" placeholder="Search for a note here..." autocomplete="off">
 <hr class="line">

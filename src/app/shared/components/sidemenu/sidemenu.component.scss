@@ -1,77 +1,81 @@
 @import "../../../../styles/variables";
 .categories {
-    width: 30%;
-    max-width: 30%;
-    background-color: $secondary-color;
-    height: 100vh;
-    position: absolute;
+  width: 30%;
+  max-width: 30%;
+  @media screen and (max-width: 1000px) {
+    width: 100%;
+    max-width: 100%;
+  }
+  background-color: $secondary-color;
+  height: 100vh;
+  position: absolute;
 }
 .category {
-    padding-top: 20px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    &__input {
-        outline: none;
-        width: 70%;
-        text-decoration: none;
-        border: none;
-        border-bottom: 1px solid $primary-color;
-        background-color: $secondary-color;
-        font-size: $placeholder-size;
-    };
-    &__icon {
-        color: $primary-color;
-        width: 35px;
-        cursor: pointer;
-    };
+  padding-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  &__input {
+    outline: none;
+    width: 70%;
+    text-decoration: none;
+    border: none;
+    border-bottom: 1px solid $primary-color;
+    background-color: $secondary-color;
+    font-size: $placeholder-size;
+  }
+  &__icon {
+    color: $primary-color;
+    width: 35px;
+    cursor: pointer;
+  }
 }
 
 .list {
-    margin-top: 30px;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  &__item {
+    cursor: pointer;
     display: flex;
-    flex-direction: column;
-    width: 100%;
-    &__item {
-        cursor: pointer;
+    flex-direction: row;
+    transition: all 0.4s;
+    &_title {
+      font-weight: bold;
+      flex: 1;
+      padding-left: 6%;
+    }
+    &_notification {
+      flex: 1;
+      .pendency {
+        margin-top: 6px;
         display: flex;
-        flex-direction: row;
-        transition: all 0.4s;
-        &_title {
-            font-weight: bold;
-            flex: 1;
-            padding-left: 6%;
+        justify-content: space-between;
+        &__item {
+          font-weight: bold;
+          width: 40%;
+          display: flex;
+          &--total {
+            text-align: center;
+            width: 100%;
+          }
         }
-        &_notification {
-            flex: 1;
-            .pendency {
-                margin-top: 6px;
-                display: flex;
-                justify-content: space-between;
-                &__item {
-                    font-weight: bold;
-                    width: 40%;
-                    display: flex;
-                    &--total {
-                        text-align: center;
-                        width: 100%;
-                    }
-                }
-            }
-        }
-        &:hover {
-            background-color: #FFEA9E;
-        }
-        &:focus {
-            background-color: #FFEA9E;
-        }
+      }
     }
+    &:hover {
+      background-color: #ffea9e;
+    }
+    &:focus {
+      background-color: #ffea9e;
+    }
+  }
 
-    .active {
-        background-color: #FFEA9E;
-    }
+  .active {
+    background-color: #ffea9e;
+  }
 }
 
 .invert-icon {
-    transform: rotate(180deg);
+  transform: rotate(180deg);
 }

@@ -40,4 +40,9 @@ export class TasksService {
     const url = `${environment.api}/tasks/${param}`;
     return this.httpClient.get(url);
   }
+
+  search(param: string, categoryId: string) {
+    const url = `${environment.api}/tasks/search`;
+    return this.httpClient.post(url, { param, categoryId });
+  }
 }

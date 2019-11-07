@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tasks',
@@ -8,14 +7,9 @@ import { Router } from '@angular/router';
 })
 export class TasksComponent implements OnInit {
 
-  items: any;
-  constructor(private router: Router) { }
+  constructor() { }
 
   ngOnInit() {
-  }
-
-  selectCategory(items: any) {
-    this.router.navigateByUrl(`tasks/${items._id}`);
   }
 
 }

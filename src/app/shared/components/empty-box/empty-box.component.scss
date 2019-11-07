@@ -2,13 +2,14 @@
 
 .box {
     height: 75px;
-    width: 415px;
+    width: 100%;
     border-radius: 10px;
     margin: auto;
     margin-top: 25%;
     display: flex;
     justify-content: space-around;
-    &--message {
+    &--message
+     {
         padding-top: 10px;
         color: $primary-color;
         pointer-events: none;

@@ -1,0 +1,27 @@
+.header {
+  @media screen and (min-width: 1000px) {
+    display: none;
+  }
+  height: 30px;
+  display: flex;
+  justify-content: space-between;
+  &__menu {
+    cursor: pointer;
+    padding-bottom: 10px;
+    height: 40px;
+  }
+}
+
+.content {
+  @media screen and (min-width: 1000px) {
+    display: none;
+  }
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  transition: 0.5s;
+}
