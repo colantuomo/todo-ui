@@ -7,7 +7,7 @@ import { environment } from 'src/environments/environment';
 })
 export class AuthService {
 
-  private static URL = `${environment.api}/auth`
+  private static URL = `${environment.api}/auth`;
   constructor(private httpClient: HttpClient) { }
 
   register(body: any) {
