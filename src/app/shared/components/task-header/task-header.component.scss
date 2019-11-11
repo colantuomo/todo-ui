@@ -8,6 +8,7 @@
         top: 90%;
         width: 98%;
         z-index: 5;
+        background-color: white;
     }
     .title {
         font-weight: bold;
@@ -20,6 +21,5 @@
         }
         display: flex;
         justify-content: space-around;
-        padding-top: 10px;
     }
 }
