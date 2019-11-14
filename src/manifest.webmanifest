@@ -1,8 +1,8 @@
 {
-  "name": "todo-ui",
-  "short_name": "todo-ui",
-  "theme_color": "#1976d2",
-  "background_color": "#fafafa",
+  "name": "Smart Task",
+  "short_name": "smart-task",
+  "theme_color": "#3d3e3e",
+  "background_color": "#2196f3",
   "display": "standalone",
   "scope": "/",
   "start_url": "/",
