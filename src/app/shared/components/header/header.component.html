@@ -1,6 +1,6 @@
 <section class="header">
-    <img class="header__menu" src="./assets/icons/menu.svg" (click)="openMenu()">
-    <img class="header__menu" src="./assets/icons/arrow_right.svg" (click)="logOut()">
+    <i class="fas fa-bars header__menu" (click)="openMenu()"></i>
+    <i class="fas fa-sign-out-alt header__menu" (click)="logOut()"></i>
 </section>
 <div #content class="content">
     <app-sidemenu (selectCategory)="closeMenu()"></app-sidemenu>

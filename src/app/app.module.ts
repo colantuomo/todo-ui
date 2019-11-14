@@ -10,6 +10,8 @@ import { MenuModule } from './shared/components/menu/menu.module';
 import { FormsModule } from '@angular/forms';
 import { JwtInterceptor } from './auth/jwt.interceptor';
 import { LoginModule } from './pages/login/login.module';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { LoginModule } from './pages/login/login.module';
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
