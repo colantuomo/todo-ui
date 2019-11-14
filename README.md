@@ -1,6 +1,7 @@
-# TodoUi
+# Smart Task
 
-[Smart Task](https://smart-task.co)
+You can see this project running [here](https://smart-task.co)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.0.
 
 ## Development server
